@@ -25,3 +25,11 @@
 //     </div>
 //   );
 // }
+
+export default function CreateProfilePageId() {
+  return(
+    <>
+    <h1>Profile</h1>
+    </>
+  );
+}

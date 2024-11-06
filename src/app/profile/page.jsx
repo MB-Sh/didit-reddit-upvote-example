@@ -58,3 +58,11 @@
 //     </div>
 //   );
 // }
+
+export default function CreateProfilePage() {
+  return(
+    <>
+    <h1>Profile</h1>
+    </>
+  );
+}
