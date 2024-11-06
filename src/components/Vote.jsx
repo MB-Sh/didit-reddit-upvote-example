@@ -45,26 +45,34 @@ async function handleVote(userId, postId, newVote) {
 
 export async function Vote({ postId, votes }) {
   const session = await auth();
+
+  const userId = session?.user?.id; //!
+
+  const errorMessage = userId ? null : "Kindly logged in to vote.";//!
   const existingVote = await getExistingVote(session?.user?.id, postId);
 
   async function upvote() {
     "use server";
+    if (!userId) return;//!
     await handleVote(session?.user?.id, postId, 1);
   }
 
   async function downvote() {
     "use server";
+    if (!userId) return; //!
     await handleVote(session?.user?.id, postId, -1);
   }
 
   return (
     <>
+    {errorMessage && <p className="text-red-500 mb-2">{errorMessage}</p>}
       <form className="flex items-center space-x-3 pl-3">
         <VoteButtons
           upvote={upvote}
           downvote={downvote}
           votes={votes}
           existingVote={existingVote}
+          error={errorMessage}
         />
         {/* <button formAction={upvote}>
           {existingVote?.vote === 1 ? (

@@ -12,6 +12,22 @@ import { FaSpinner } from "react-icons/fa";
 
 export function VoteButtons({ upvote, downvote, votes, existingVote }) {
   const { pending, data, method, action } = useFormStatus();
+  
+  async function handleDownvote() {
+    setError(null); // Reset any previous error
+
+    // Prevent voting below -1
+    if (votes <= -1) {
+      setError("Votes cannot go below -1.");
+      return;
+    }
+
+    try {
+      await downvote();
+    } catch (err) {
+      setError("You need to be logged in to vote.");
+    }
+  }
 
   return (
     <>
@@ -41,7 +57,7 @@ export function VoteButtons({ upvote, downvote, votes, existingVote }) {
           votes
         )}
       </span>
-      <button formAction={downvote}>
+      <button formAction={downvote} disabled={pending || votes <= -1}>
         {existingVote?.vote === -1 ? (
           <TbArrowBigDownFilled
             size={24}

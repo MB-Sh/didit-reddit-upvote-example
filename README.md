@@ -46,3 +46,25 @@ The project is a work in progress and is not yet complete.
 - [ ] User following
 - [ ] User feed (posts from users you follow)
 - [ ] User flair
+
+Reflection.......
+🎯 Please mention the requirements you met and which goals you achieved for this assignment.
+
+I was able to debug and deploy a working vercel link as per the requirement.
+==========================
+ Stretch Goals:
+
+I was able to add a few line of code to handle the error when you click to vote while not logged in to show a nice error message.
+
+To prevent the user voting more than once. I uncommented the line on the user sql table to fix it.
+
+I also add a head to my post page to fix page titles on post pages to match the post title.
+
+I started off creating a profile page form but encountered some errors, realting to using the right auth.
+(Optional)
+==============================
+🏹 Feel free to add any other reflections you would like to share about your submission e.g.
+
+the whole task was overwhelming and it took several reading to understand what is need to be done to be able to start. 
+ 
+.
