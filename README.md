@@ -60,7 +60,7 @@ To prevent the user voting more than once. I uncommented the line on the user sq
 
 I also add a head to my post page to fix page titles on post pages to match the post title.
 
-I started off creating a profile page form but encountered some errors, realting to using the right auth.
+I started off creating a profile page form but encountered some errors, realting to using the right auth. this was commented out to prevent deployment failure.
 (Optional)
 ==============================
 🏹 Feel free to add any other reflections you would like to share about your submission e.g.
